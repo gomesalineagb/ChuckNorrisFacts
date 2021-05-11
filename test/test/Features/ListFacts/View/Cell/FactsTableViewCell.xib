@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="listFactsCell" rowHeight="179" id="HtN-ze-laS" customClass="FactsTableViewCell" customModule="test" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="179"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HtN-ze-laS" id="QLo-MC-73h">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="179"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HgC-Cc-YeJ">
+                        <rect key="frame" x="20" y="15" width="280" height="24"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <color key="textColor" name="defaultBlack"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="tag" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kD1-uG-bfH">
+                        <rect key="frame" x="20" y="54" width="26" height="21.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <color key="textColor" name="defaultBlack"/>
+                        <color key="highlightedColor" name="AccentColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9rI-qI-yvc">
+                        <rect key="frame" x="281" y="54" width="19" height="22"/>
+                        <color key="tintColor" systemColor="linkColor"/>
+                        <state key="normal" image="square.and.arrow.up" catalog="system">
+                            <color key="titleColor" systemColor="labelColor"/>
+                            <color key="titleShadowColor" red="0.15000000599999999" green="0.15000000599999999" blue="0.15000000599999999" alpha="1" colorSpace="deviceRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="shareWithFriends:" destination="HtN-ze-laS" eventType="touchUpInside" id="flw-OT-Pyx"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="kD1-uG-bfH" firstAttribute="leading" secondItem="HgC-Cc-YeJ" secondAttribute="leading" id="5i0-m5-ege"/>
+                    <constraint firstItem="kD1-uG-bfH" firstAttribute="top" secondItem="HgC-Cc-YeJ" secondAttribute="bottom" constant="15" id="6ee-BK-A6A"/>
+                    <constraint firstItem="9rI-qI-yvc" firstAttribute="top" secondItem="HgC-Cc-YeJ" secondAttribute="bottom" constant="15" id="8la-yW-mtI"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="kD1-uG-bfH" secondAttribute="bottom" constant="15" id="Ezg-gn-79o"/>
+                    <constraint firstItem="HgC-Cc-YeJ" firstAttribute="leading" secondItem="QLo-MC-73h" secondAttribute="leading" constant="20" id="F3Z-ar-Z5W"/>
+                    <constraint firstAttribute="trailing" secondItem="HgC-Cc-YeJ" secondAttribute="trailing" constant="20" id="gM0-uH-7Uy"/>
+                    <constraint firstItem="HgC-Cc-YeJ" firstAttribute="top" secondItem="QLo-MC-73h" secondAttribute="top" constant="15" id="gbJ-Bm-cm2"/>
+                    <constraint firstItem="9rI-qI-yvc" firstAttribute="trailing" secondItem="HgC-Cc-YeJ" secondAttribute="trailing" id="s0x-Dt-JyH"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="v66-gF-y0U"/>
+            <color key="backgroundColor" name="defaultWhite"/>
+            <connections>
+                <outlet property="factLabel" destination="HgC-Cc-YeJ" id="J58-rr-tpK"/>
+                <outlet property="shareButton" destination="9rI-qI-yvc" id="jf9-j3-v05"/>
+                <outlet property="tagLabel" destination="kD1-uG-bfH" id="QvL-6U-ZxO"/>
+            </connections>
+            <point key="canvasLocation" x="-22" y="229"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
+        <namedColor name="AccentColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="defaultBlack">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="defaultWhite">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
