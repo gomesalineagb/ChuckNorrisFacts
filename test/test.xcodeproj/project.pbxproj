@@ -22,6 +22,12 @@
 		2E9148AE264B13C00088CD18 /* FactsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E9148AC264B13C00088CD18 /* FactsTableViewCell.xib */; };
 		2E9148B6264B13E30088CD18 /* ListFactsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9148B5264B13E30088CD18 /* ListFactsModel.swift */; };
 		2E9148BE264B15270088CD18 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9148BD264B15270088CD18 /* Constants.swift */; };
+		2E9148C7264B179E0088CD18 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9148C6264B179E0088CD18 /* UIFont+Extension.swift */; };
+		2E9148CC264B17B60088CD18 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9148CB264B17B60088CD18 /* UIColor+Extension.swift */; };
+		2E9148D2264B18BD0088CD18 /* FontType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9148D1264B18BD0088CD18 /* FontType.swift */; };
+		2E9148D9264B342F0088CD18 /* Courier-New.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E9148D6264B342F0088CD18 /* Courier-New.ttf */; };
+		2E9148DA264B342F0088CD18 /* ChuckNorris.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E9148D7264B342F0088CD18 /* ChuckNorris.ttf */; };
+		2E9148DB264B342F0088CD18 /* Courier-New-bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E9148D8264B342F0088CD18 /* Courier-New-bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +69,12 @@
 		2E9148AC264B13C00088CD18 /* FactsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FactsTableViewCell.xib; sourceTree = "<group>"; };
 		2E9148B5264B13E30088CD18 /* ListFactsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFactsModel.swift; sourceTree = "<group>"; };
 		2E9148BD264B15270088CD18 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2E9148C6264B179E0088CD18 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		2E9148CB264B17B60088CD18 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		2E9148D1264B18BD0088CD18 /* FontType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontType.swift; sourceTree = "<group>"; };
+		2E9148D6264B342F0088CD18 /* Courier-New.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Courier-New.ttf"; sourceTree = "<group>"; };
+		2E9148D7264B342F0088CD18 /* ChuckNorris.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ChuckNorris.ttf; sourceTree = "<group>"; };
+		2E9148D8264B342F0088CD18 /* Courier-New-bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Courier-New-bold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +166,7 @@
 		2E914888264B08750088CD18 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				2E9148D0264B185F0088CD18 /* Fonts */,
 				2E91471F2649A72C0088CD18 /* Assets.xcassets */,
 			);
 			path = Source;
@@ -179,6 +192,7 @@
 		2E91488E264B125B0088CD18 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				2E9148C5264B17770088CD18 /* Extensions */,
 				2E914891264B12E00088CD18 /* Common */,
 				2E9148BD264B15270088CD18 /* Constants.swift */,
 			);
@@ -219,6 +233,26 @@
 				2E9148AC264B13C00088CD18 /* FactsTableViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		2E9148C5264B17770088CD18 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2E9148C6264B179E0088CD18 /* UIFont+Extension.swift */,
+				2E9148CB264B17B60088CD18 /* UIColor+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2E9148D0264B185F0088CD18 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				2E9148D7264B342F0088CD18 /* ChuckNorris.ttf */,
+				2E9148D8264B342F0088CD18 /* Courier-New-bold.ttf */,
+				2E9148D6264B342F0088CD18 /* Courier-New.ttf */,
+				2E9148D1264B18BD0088CD18 /* FontType.swift */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,10 +358,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E9148DA264B342F0088CD18 /* ChuckNorris.ttf in Resources */,
 				2E9147232649A72C0088CD18 /* LaunchScreen.storyboard in Resources */,
 				2E9147202649A72C0088CD18 /* Assets.xcassets in Resources */,
 				2E91471E2649A72A0088CD18 /* Main.storyboard in Resources */,
+				2E9148DB264B342F0088CD18 /* Courier-New-bold.ttf in Resources */,
 				2E9148AE264B13C00088CD18 /* FactsTableViewCell.xib in Resources */,
+				2E9148D9264B342F0088CD18 /* Courier-New.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,11 +392,14 @@
 				2E91471B2649A72A0088CD18 /* ListFactsViewController.swift in Sources */,
 				2E9148A1264B13650088CD18 /* ListFactsViewController+UITableViewDataSource.swift in Sources */,
 				2E9148AD264B13C00088CD18 /* FactsTableViewCell.swift in Sources */,
+				2E9148CC264B17B60088CD18 /* UIColor+Extension.swift in Sources */,
 				2E9147172649A72A0088CD18 /* AppDelegate.swift in Sources */,
 				2E9148A6264B13760088CD18 /* ListFactsViewController+UITableViewDelegate.swift in Sources */,
+				2E9148D2264B18BD0088CD18 /* FontType.swift in Sources */,
 				2E9148B6264B13E30088CD18 /* ListFactsModel.swift in Sources */,
 				2E9147192649A72A0088CD18 /* SceneDelegate.swift in Sources */,
 				2E914893264B12ED0088CD18 /* ViewCodeProtocol.swift in Sources */,
+				2E9148C7264B179E0088CD18 /* UIFont+Extension.swift in Sources */,
 				2E9148BE264B15270088CD18 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

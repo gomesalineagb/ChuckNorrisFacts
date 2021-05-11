@@ -14,7 +14,7 @@ class ListFactsViewController: UIViewController {
         table.translatesAutoresizingMaskIntoConstraints = false
         table.rowHeight = UITableView.automaticDimension
         table.estimatedRowHeight = 600
-        table.backgroundColor = .white
+        table.backgroundColor = .defaultWhite
         table.register(UINib(nibName: "FactsTableViewCell", bundle: nil), forCellReuseIdentifier: FactsTableViewCell.identifier)
         table.dataSource = self
         table.delegate = self
@@ -49,7 +49,7 @@ extension ListFactsViewController: ViewCode{
     
     func setupAdditionalConfiguration() {
         self.title = Constants.kTitleViewListFacts
-        self.view.backgroundColor = .white
+        self.view.backgroundColor = .defaultWhite
     }
 }
 

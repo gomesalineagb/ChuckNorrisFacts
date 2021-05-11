@@ -20,6 +20,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         DispatchQueue.main.async {
             let nav = UINavigationController()
+            nav.navigationBar.prefersLargeTitles = true
+            nav.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "04b30", size: 25)!, NSAttributedString.Key.foregroundColor: UIColor.defaultOrange]
             nav.pushViewController(ListFactsViewController(), animated: true)
             self.window?.rootViewController = nav
             self.window?.makeKeyAndVisible()
