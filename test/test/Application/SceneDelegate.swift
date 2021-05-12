@@ -22,7 +22,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let nav = UINavigationController()
             nav.navigationBar.prefersLargeTitles = true
             nav.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "04b30", size: 25)!, NSAttributedString.Key.foregroundColor: UIColor.defaultOrange]
-            nav.pushViewController(ListFactsViewController(), animated: true)
+            
+            let chuckNorrisProvider = ChuckNorrisDataManager()
+            let listFactsView = ListFactsViewController()
+            let viewModel = ListFactsViewModel()
+            
+            listFactsView.viewModel = viewModel
+            viewModel.listFactsView = listFactsView
+            viewModel.chuckNorrisProvider = chuckNorrisProvider
+            
+            nav.pushViewController(listFactsView, animated: true)
             self.window?.rootViewController = nav
             self.window?.makeKeyAndVisible()
         }

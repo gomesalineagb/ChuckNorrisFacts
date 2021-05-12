@@ -21,6 +21,8 @@ class ListFactsViewController: UIViewController {
         
         return table
     }()
+    
+    var viewModel: ListFactsViewModelProtocol?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,9 +32,13 @@ class ListFactsViewController: UIViewController {
     func isFirstAcess() {
         
     }
+    
+//    required init?(coder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
 }
 
-extension ListFactsViewController: ViewCode{
+extension ListFactsViewController: ViewCode {
     
     func setupConstraints() {
         NSLayoutConstraint.activate([
@@ -53,3 +59,12 @@ extension ListFactsViewController: ViewCode{
     }
 }
 
+
+extension ListFactsViewController: ListFactsViewControllerProtocol {
+    func reloadData() {
+        DispatchQueue.main.async {
+            self.tableViewContent.reloadData()
+            //stop indicator
+        }
+    }
+}

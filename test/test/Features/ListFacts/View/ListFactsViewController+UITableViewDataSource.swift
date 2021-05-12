@@ -10,12 +10,14 @@ import UIKit
 
 extension ListFactsViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        guard let viewModel = viewModel else { return 0 }
+        return viewModel.numberOfRowsInSection()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: FactsTableViewCell.identifier, for: indexPath) as? FactsTableViewCell {
-            cell.setup(model: ListFactsModel(fact: "Chuck norris is a terrible joker, as a joker he is a good actor", tag: "sarcasm"))
+            guard let viewModel = viewModel else { return UITableViewCell() }
+            cell.setup(model: viewModel.getFact(for: indexPath))
             
             return cell
         }

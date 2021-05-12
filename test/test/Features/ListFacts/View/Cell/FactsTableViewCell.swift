@@ -18,12 +18,7 @@ class FactsTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.factLabel?.font = .dynamicFont(type: .courierNew, size: 20)
-        
-        self.tagLabel?.layer.cornerRadius = 5
-        self.tagLabel?.textColor = .white
-        self.tagLabel?.layer.backgroundColor = UIColor.lightGray.cgColor
-        self.tagLabel?.font = .dynamicFont(style: .body, type: .courierNewBold, size: 18)
+        setupUI()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -32,9 +27,18 @@ class FactsTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setup(model: ListFactsModel) {
+    func setupUI() {
+        
+        self.tagLabel?.layer.cornerRadius = 5
+        self.tagLabel?.textColor = .white
+        self.tagLabel?.layer.backgroundColor = UIColor.lightGray.cgColor
+        self.tagLabel?.font = .dynamicFont(style: .body, type: .courierNewBold, size: 18)
+    }
+    
+    func setup(model: FactModel) {
         self.factLabel?.text = model.fact
         self.tagLabel?.text = model.tag
+        self.factLabel?.font = .dynamicFont(type: .courierNew, size: model.fontSize)
     }
     
     @IBAction func shareWithFriends(_ sender: Any) {
