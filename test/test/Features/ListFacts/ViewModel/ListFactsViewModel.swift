@@ -10,8 +10,31 @@ import Foundation
 public class ListFactsViewModel {
     var chuckNorrisProvider: ChuckNorrisProvider?
     var listFactsView: ListFactsViewControllerProtocol?
-    private var facts: [Fact] = []
+    
+    private var facts: [Fact] {
+        didSet{
+            if oldValue != facts{
+                let encoder = JSONEncoder()
+                if let encoded = try? encoder.encode(facts){
+                 UserDefaults.standard.set(encoded, forKey: "facts")
+                }
+            }
+        }
+     }
 
+    init() {
+        
+        if let objects = UserDefaults.standard.value(forKey: "facts") as? Data {
+           let decoder = JSONDecoder()
+           if let objectsDecoded = try? decoder.decode(Array.self, from: objects) as [Fact] {
+               facts = objectsDecoded
+           } else {
+                facts = []
+           }
+        } else {
+            facts = []
+        }
+    }
 }
 
 extension ListFactsViewModel: ListFactsViewModelProtocol {
