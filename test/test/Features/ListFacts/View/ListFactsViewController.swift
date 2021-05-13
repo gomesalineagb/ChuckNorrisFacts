@@ -28,14 +28,14 @@ class ListFactsViewController: UIViewController {
         super.viewDidLoad()
         setupViews()
     }
-
-    func isFirstAcess() {
-        
+    
+    @objc func refreshRandom() {
+        self.viewModel?.fetchRandom()
     }
     
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
+    @objc func search() {
+        
+    }
 }
 
 extension ListFactsViewController: ViewCode {
@@ -56,6 +56,13 @@ extension ListFactsViewController: ViewCode {
     func setupAdditionalConfiguration() {
         self.title = Constants.kTitleViewListFacts
         self.view.backgroundColor = .defaultWhite
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "magnifyingglass"), style: .done, target: self, action: #selector(search))
+        navigationItem.rightBarButtonItem?.tintColor = .defaultOrange
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrow.clockwise"), style: .done, target: self, action: #selector(refreshRandom))
+        navigationItem.leftBarButtonItem?.tintColor = .defaultOrange
+        
     }
 }
 
