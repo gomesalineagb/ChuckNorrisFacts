@@ -14,6 +14,7 @@ enum Constants{
     static let kSearchTerm = "Enter your search term"
     static let kSuggestions = "Suggestions"
     static let kPastSearches = "Past Searches"
+    static let kFactsUD = "facts"
     
     
     enum Measures{

@@ -37,6 +37,9 @@
 		2ED7B04D264C59A8003DE646 /* ListFactsViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7B04C264C59A8003DE646 /* ListFactsViewControllerProtocol.swift */; };
 		2ED7B052264C59C0003DE646 /* ListFactsViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7B051264C59C0003DE646 /* ListFactsViewModelProtocol.swift */; };
 		2ED7B05A264C7781003DE646 /* Fact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7B059264C7781003DE646 /* Fact.swift */; };
+		2ED7B072264DC436003DE646 /* ListFactsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7B071264DC436003DE646 /* ListFactsCoordinator.swift */; };
+		2ED7B07B264DC454003DE646 /* ListFactsCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7B07A264DC454003DE646 /* ListFactsCoordinatorProtocol.swift */; };
+		2ED7B080264DC47B003DE646 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7B07F264DC47B003DE646 /* Coordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +96,9 @@
 		2ED7B04C264C59A8003DE646 /* ListFactsViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFactsViewControllerProtocol.swift; sourceTree = "<group>"; };
 		2ED7B051264C59C0003DE646 /* ListFactsViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFactsViewModelProtocol.swift; sourceTree = "<group>"; };
 		2ED7B059264C7781003DE646 /* Fact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fact.swift; sourceTree = "<group>"; };
+		2ED7B071264DC436003DE646 /* ListFactsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFactsCoordinator.swift; sourceTree = "<group>"; };
+		2ED7B07A264DC454003DE646 /* ListFactsCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFactsCoordinatorProtocol.swift; sourceTree = "<group>"; };
+		2ED7B07F264DC47B003DE646 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +211,7 @@
 				2E91488F264B12650088CD18 /* View */,
 				2EBA33EF264C567800498EAF /* ViewModel */,
 				2E914890264B12690088CD18 /* Model */,
+				2ED7B070264DC423003DE646 /* Coordinator */,
 			);
 			path = ListFacts;
 			sourceTree = "<group>";
@@ -243,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				2E914892264B12ED0088CD18 /* ViewCodeProtocol.swift */,
+				2ED7B07F264DC47B003DE646 /* Coordinator.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -296,6 +304,15 @@
 				2ED7B051264C59C0003DE646 /* ListFactsViewModelProtocol.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2ED7B070264DC423003DE646 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				2ED7B071264DC436003DE646 /* ListFactsCoordinator.swift */,
+				2ED7B07A264DC454003DE646 /* ListFactsCoordinatorProtocol.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -432,6 +449,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2ED7B072264DC436003DE646 /* ListFactsCoordinator.swift in Sources */,
 				2EBA33D7264C0E8D00498EAF /* ChuckNorrisProvider.swift in Sources */,
 				2E91471B2649A72A0088CD18 /* ListFactsViewController.swift in Sources */,
 				2ED7B05A264C7781003DE646 /* Fact.swift in Sources */,
@@ -439,6 +457,8 @@
 				2EBA33DC264C18BD00498EAF /* Endpoints.swift in Sources */,
 				2E9148AD264B13C00088CD18 /* FactsTableViewCell.swift in Sources */,
 				2E9148CC264B17B60088CD18 /* UIColor+Extension.swift in Sources */,
+				2ED7B080264DC47B003DE646 /* Coordinator.swift in Sources */,
+				2ED7B07B264DC454003DE646 /* ListFactsCoordinatorProtocol.swift in Sources */,
 				2ED7B052264C59C0003DE646 /* ListFactsViewModelProtocol.swift in Sources */,
 				2EBA33E1264C256B00498EAF /* ChuckNorrisDataManager.swift in Sources */,
 				2EBA33EB264C4A1200498EAF /* RequestError.swift in Sources */,

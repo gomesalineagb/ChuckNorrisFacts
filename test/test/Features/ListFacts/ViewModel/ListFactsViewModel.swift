@@ -11,28 +11,28 @@ public class ListFactsViewModel {
     var chuckNorrisProvider: ChuckNorrisProvider?
     var listFactsView: ListFactsViewControllerProtocol?
     
-    private var facts: [Fact] {
+    private var facts: [Fact] = [] {
         didSet{
             if oldValue != facts{
                 let encoder = JSONEncoder()
                 if let encoded = try? encoder.encode(facts){
-                 UserDefaults.standard.set(encoded, forKey: "facts")
+                    UserDefaults.standard.set(encoded, forKey: Constants.kFactsUD)
                 }
+                self.listFactsView?.reloadData()
             }
         }
      }
-
+    
     init() {
-        
-        if let objects = UserDefaults.standard.value(forKey: "facts") as? Data {
-           let decoder = JSONDecoder()
-           if let objectsDecoded = try? decoder.decode(Array.self, from: objects) as [Fact] {
-               facts = objectsDecoded
-           } else {
-                facts = []
-           }
-        } else {
-            facts = []
+        getFactsFromCache()
+    }
+
+    func getFactsFromCache() {
+        if let objects = UserDefaults.standard.value(forKey: Constants.kFactsUD) as? Data {
+            let decoder = JSONDecoder()
+            if let objectsDecoded = try? decoder.decode(Array.self, from: objects) as [Fact] {
+                facts = objectsDecoded
+            }
         }
     }
 }
@@ -44,7 +44,6 @@ extension ListFactsViewModel: ListFactsViewModelProtocol {
             switch result {
             case .success(let ListFacts):
                 self?.facts = ListFacts.result
-                self?.listFactsView?.reloadData()
             case .failure(let error):
                 print("\n\n\n\n\n\n\n erro API: ",error,"\n\n\n\n\n\n")
             }
@@ -57,9 +56,7 @@ extension ListFactsViewModel: ListFactsViewModelProtocol {
         self.chuckNorrisProvider?.fetchByCategory(category: category) { [weak self] (result) in
             switch result {
             case .success(let fact):
-                self?.facts.removeAll()
-                self?.facts.append(fact)
-                self?.listFactsView?.reloadData()
+                self?.facts = [fact]
             case .failure(let error):
                 print("\n\n\n\n\n\n\n erro API: ",error,"\n\n\n\n\n\n")
             }
@@ -86,9 +83,7 @@ extension ListFactsViewModel: ListFactsViewModelProtocol {
         self.chuckNorrisProvider?.fetchRandom { [weak self] (result) in
             switch result {
             case .success(let fact):
-                self?.facts.removeAll()
-                self?.facts.append(fact)
-                self?.listFactsView?.reloadData()
+                self?.facts = [fact]
             case .failure(let error):
                 print("\n\n\n\n\n\n\n erro API: ",error,"\n\n\n\n\n\n")
             }
