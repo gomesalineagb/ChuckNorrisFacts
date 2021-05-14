@@ -17,22 +17,20 @@ public class ListFactsCoordinator: Coordinator{
     }
     
     func start() {
-        navigationController.navigationBar.prefersLargeTitles = true
-        navigationController.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "04b30", size: 25)!, NSAttributedString.Key.foregroundColor: UIColor.defaultOrange]
-        navigationController.navigationBar.titleTextAttributes = [ NSAttributedString.Key.foregroundColor: UIColor.defaultBrown]
-        
  
         let chuckNorrisProvider = ChuckNorrisDataManager()
-        let listFactsView = ListFactsViewController()
+        DispatchQueue.main.async {
+            
+            let listFactsView = ListFactsViewController()
         let cacheProvider = CacheDataManager()
         let viewModel = ListFactsViewModel(cache: cacheProvider)
         
         listFactsView.viewModel = viewModel
         viewModel.listFactsView = listFactsView
         viewModel.chuckNorrisProvider = chuckNorrisProvider
-//        viewModel.cacheProvider = cacheProvider
         viewModel.coordinator = self
-        navigationController.pushViewController(listFactsView, animated: true)
+            self.navigationController.pushViewController(listFactsView, animated: true)
+    }
     }
 }
 

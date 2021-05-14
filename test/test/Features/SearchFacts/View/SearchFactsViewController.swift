@@ -13,11 +13,12 @@ class SearchFactsViewController: UIViewController {
         let table = UITableView(frame: self.view.frame)
         table.translatesAutoresizingMaskIntoConstraints = false
         table.rowHeight = UITableView.automaticDimension
-        table.separatorStyle = .none
+//        table.separatorStyle = .none
 //        table.allowsSelection = false
         table.estimatedRowHeight = 600
         table.backgroundColor = .defaultWhite
-        table.register(UINib(nibName: "FactsTableViewCell", bundle: nil), forCellReuseIdentifier: FactsTableViewCell.identifier)
+        table.register(UINib(nibName: "TagsTableViewCell", bundle: nil), forCellReuseIdentifier: TagsTableViewCell.identifier)
+        table.register(UINib(nibName: "PastSearchesTableViewCell", bundle: nil), forCellReuseIdentifier: PastSearchesTableViewCell.identifier)
         table.dataSource = self
         table.delegate = self 
         
@@ -51,8 +52,29 @@ extension SearchFactsViewController: ViewCode{
         self.title = Constants.kTitleViewSearchFacts
         self.view.backgroundColor = .defaultWhite
         
-        self.navigationItem.searchController = UISearchController(searchResultsController: nil)
+        let search = UISearchController(searchResultsController: nil)
+//        search.searchResultsUpdater = self
+        search.searchBar.delegate = self
+        search.obscuresBackgroundDuringPresentation = false
+        search.searchBar.placeholder = "Enter your search term"
+        
+        self.navigationItem.searchController = search
         self.navigationItem.searchController?.searchBar.largeContentTitle = "Enter your search term (at least 3 char)"
+    }
+}
+
+extension SearchFactsViewController: UISearchBarDelegate {
+//    func updateSearchResults(for searchController: UISearchController) {
+//        guard let text = searchController.searchBar.text else { return }
+//        //at least 3 character
+//    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        if let text = searchBar.text {
+            self.viewModel?.search(with: text)
+        }
+        
     }
 }
 

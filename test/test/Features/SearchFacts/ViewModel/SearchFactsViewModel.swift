@@ -13,21 +13,40 @@ public class SearchFactsViewModel {
     var searchFactsView: SearchFactsViewControllerProtocol?
     var coordinator: SearchFactsCoordinatorProtocol?
     var cacheProvider: CacheProvider?
-    private var categories: [String] {
+    private var categories: [String] = []
+    private var pastSearches: [String] = []
+    
+    private var dataProperty: [UpcomingDisplayProtocol] {
         get {
-            return self.cacheProvider?.getCategories() ?? []
+            return [ArrayString(type: .tags, values: categories), ArrayString(type: .suggestions, values: pastSearches)]
         }
-        set {}
-    }
-    private var pastSearches: [String] {
-        get {
-            return self.cacheProvider?.getPastSearches() ?? []
-        }
-        set {}
     }
     
-    init() {
+    init(cache: CacheProvider) {
+        self.cacheProvider = cache
         
+        self.categories = self.getCategoriesRandom(count: 8)
+        self.pastSearches = self.cacheProvider?.getPastSearches() ?? []
+    }
+    
+    func getCategoriesRandom(count: Int) -> [String] {
+        if let objects = self.cacheProvider?.getCategories(){
+        
+            var newObjects: [String] = []
+            var i = 0
+            
+            while i < count {
+                if let randomElement = objects.randomElement(){
+                    if !newObjects.contains(randomElement) {
+                        newObjects.append(randomElement)
+                        i += 1
+                    }
+                }
+            }
+            return newObjects
+        }
+        
+        return []
     }
 }
 
@@ -63,11 +82,11 @@ extension SearchFactsViewModel: SearchFactsViewModelProtocol {
         }
     }
     
-    func getCategoriesRandom(count: Int) -> [String] {
-        return []
+    func numberOfRowsInSection() -> Int {
+        return dataProperty.count
     }
     
-    func numberOfRowsInSection() -> Int {
-        return 0
+    func getDataProperty(indexPath: IndexPath) -> UpcomingDisplayProtocol {
+        return dataProperty[indexPath.row]
     }
 }

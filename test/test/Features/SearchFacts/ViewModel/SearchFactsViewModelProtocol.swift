@@ -10,7 +10,7 @@ import Foundation
 protocol SearchFactsViewModelProtocol {
     func search(with term: String)
     func fetchByCategory(category: String)
-    func getCategoriesRandom(count: Int) -> [String]
     func numberOfRowsInSection() -> Int
+    func getDataProperty(indexPath: IndexPath) -> UpcomingDisplayProtocol
 //    func numberOfSections() -> Int
 }

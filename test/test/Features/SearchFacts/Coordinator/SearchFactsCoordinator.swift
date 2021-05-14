@@ -21,13 +21,12 @@ class SearchFactsCoordinator: Coordinator {
         
         let chuckNorrisProvider = ChuckNorrisDataManager()
         let searchFactsView = SearchFactsViewController()
-        let viewModel = SearchFactsViewModel()
         let cacheProvider = CacheDataManager()
+        let viewModel = SearchFactsViewModel(cache: cacheProvider)
         
-//        searchFactsView.viewModel = viewModel
+        searchFactsView.viewModel = viewModel
         viewModel.searchFactsView = searchFactsView
         viewModel.chuckNorrisProvider = chuckNorrisProvider
-        viewModel.cacheProvider = cacheProvider
         viewModel.coordinator = self
                 
         navigationController.pushViewController(searchFactsView, animated: true)

@@ -50,6 +50,12 @@
 		2ED7B0AD264EF378003DE646 /* SearchFactsViewController+UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7B0AC264EF378003DE646 /* SearchFactsViewController+UITableViewDelegate.swift */; };
 		2ED7B0B4264EF83B003DE646 /* CacheProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7B0B3264EF83B003DE646 /* CacheProvider.swift */; };
 		2ED7B0B9264EF848003DE646 /* CacheDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7B0B8264EF848003DE646 /* CacheDataManager.swift */; };
+		2ED7B0CC264F0C72003DE646 /* TagsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7B0CA264F0C72003DE646 /* TagsTableViewCell.swift */; };
+		2ED7B0CD264F0C72003DE646 /* TagsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2ED7B0CB264F0C72003DE646 /* TagsTableViewCell.xib */; };
+		2ED7B0D8264F0C9F003DE646 /* PastSearchesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7B0D6264F0C9F003DE646 /* PastSearchesTableViewCell.swift */; };
+		2ED7B0D9264F0C9F003DE646 /* PastSearchesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2ED7B0D7264F0C9F003DE646 /* PastSearchesTableViewCell.xib */; };
+		2ED7B0E6264F0DF6003DE646 /* ArrayString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7B0E5264F0DF6003DE646 /* ArrayString.swift */; };
+		2ED7B0F2264F0FB9003DE646 /* UpcomingDisplayProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7B0F1264F0FB9003DE646 /* UpcomingDisplayProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +125,12 @@
 		2ED7B0AC264EF378003DE646 /* SearchFactsViewController+UITableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchFactsViewController+UITableViewDelegate.swift"; sourceTree = "<group>"; };
 		2ED7B0B3264EF83B003DE646 /* CacheProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheProvider.swift; sourceTree = "<group>"; };
 		2ED7B0B8264EF848003DE646 /* CacheDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheDataManager.swift; sourceTree = "<group>"; };
+		2ED7B0CA264F0C72003DE646 /* TagsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsTableViewCell.swift; sourceTree = "<group>"; };
+		2ED7B0CB264F0C72003DE646 /* TagsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagsTableViewCell.xib; sourceTree = "<group>"; };
+		2ED7B0D6264F0C9F003DE646 /* PastSearchesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastSearchesTableViewCell.swift; sourceTree = "<group>"; };
+		2ED7B0D7264F0C9F003DE646 /* PastSearchesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PastSearchesTableViewCell.xib; sourceTree = "<group>"; };
+		2ED7B0E5264F0DF6003DE646 /* ArrayString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayString.swift; sourceTree = "<group>"; };
+		2ED7B0F1264F0FB9003DE646 /* UpcomingDisplayProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingDisplayProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +185,7 @@
 				2E9148EC264B68740088CD18 /* DataAccessLayer */,
 				2E914881264B07AE0088CD18 /* Application */,
 				2E914888264B08750088CD18 /* Source */,
+				2ED7B0F0264F0F62003DE646 /* BaseModels */,
 				2E91488E264B125B0088CD18 /* Utils */,
 			);
 			path = test;
@@ -231,7 +244,6 @@
 			children = (
 				2E91488F264B12650088CD18 /* View */,
 				2EBA33EF264C567800498EAF /* ViewModel */,
-				2E914890264B12690088CD18 /* Model */,
 				2ED7B070264DC423003DE646 /* Coordinator */,
 			);
 			path = ListFacts;
@@ -257,15 +269,6 @@
 				2ED7B04C264C59A8003DE646 /* ListFactsViewControllerProtocol.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		2E914890264B12690088CD18 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				2E9148B5264B13E30088CD18 /* FactModel.swift */,
-				2ED7B059264C7781003DE646 /* Fact.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		2E914891264B12E00088CD18 /* Common */ = {
@@ -338,7 +341,6 @@
 			children = (
 				2ED7B088264DC7DA003DE646 /* View */,
 				2ED7B087264DC7D0003DE646 /* ViewModel */,
-				2ED7B086264DC7CB003DE646 /* Model */,
 				2ED7B085264DC7AF003DE646 /* Coordinator */,
 			);
 			path = SearchFacts;
@@ -353,13 +355,6 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
-		2ED7B086264DC7CB003DE646 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		2ED7B087264DC7D0003DE646 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -372,6 +367,7 @@
 		2ED7B088264DC7DA003DE646 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2ED7B0C9264F0C4A003DE646 /* Cell */,
 				2ED7B093264DC97A003DE646 /* SearchFactsViewController.swift */,
 				2ED7B0A2264EBA0C003DE646 /* SearchFactsViewControllerProtocol.swift */,
 				2ED7B0A7264EF33A003DE646 /* SearchFactsViewController+UITableViewDataSource.swift */,
@@ -399,6 +395,44 @@
 				2ED7B0B8264EF848003DE646 /* CacheDataManager.swift */,
 			);
 			path = Cache;
+			sourceTree = "<group>";
+		};
+		2ED7B0C9264F0C4A003DE646 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				2ED7B0D4264F0C83003DE646 /* Tags */,
+				2ED7B0D5264F0C8F003DE646 /* PastSearches */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		2ED7B0D4264F0C83003DE646 /* Tags */ = {
+			isa = PBXGroup;
+			children = (
+				2ED7B0CA264F0C72003DE646 /* TagsTableViewCell.swift */,
+				2ED7B0CB264F0C72003DE646 /* TagsTableViewCell.xib */,
+			);
+			path = Tags;
+			sourceTree = "<group>";
+		};
+		2ED7B0D5264F0C8F003DE646 /* PastSearches */ = {
+			isa = PBXGroup;
+			children = (
+				2ED7B0D6264F0C9F003DE646 /* PastSearchesTableViewCell.swift */,
+				2ED7B0D7264F0C9F003DE646 /* PastSearchesTableViewCell.xib */,
+			);
+			path = PastSearches;
+			sourceTree = "<group>";
+		};
+		2ED7B0F0264F0F62003DE646 /* BaseModels */ = {
+			isa = PBXGroup;
+			children = (
+				2E9148B5264B13E30088CD18 /* FactModel.swift */,
+				2ED7B059264C7781003DE646 /* Fact.swift */,
+				2ED7B0E5264F0DF6003DE646 /* ArrayString.swift */,
+				2ED7B0F1264F0FB9003DE646 /* UpcomingDisplayProtocol.swift */,
+			);
+			path = BaseModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -504,7 +538,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2ED7B0CD264F0C72003DE646 /* TagsTableViewCell.xib in Resources */,
 				2E9148DA264B342F0088CD18 /* ChuckNorris.ttf in Resources */,
+				2ED7B0D9264F0C9F003DE646 /* PastSearchesTableViewCell.xib in Resources */,
 				2E9147232649A72C0088CD18 /* LaunchScreen.storyboard in Resources */,
 				2E9147202649A72C0088CD18 /* Assets.xcassets in Resources */,
 				2E91471E2649A72A0088CD18 /* Main.storyboard in Resources */,
@@ -542,20 +578,24 @@
 				2E91471B2649A72A0088CD18 /* ListFactsViewController.swift in Sources */,
 				2ED7B05A264C7781003DE646 /* Fact.swift in Sources */,
 				2E9148A1264B13650088CD18 /* ListFactsViewController+UITableViewDataSource.swift in Sources */,
+				2ED7B0D8264F0C9F003DE646 /* PastSearchesTableViewCell.swift in Sources */,
 				2EBA33DC264C18BD00498EAF /* Endpoints.swift in Sources */,
 				2E9148AD264B13C00088CD18 /* FactsTableViewCell.swift in Sources */,
 				2E9148CC264B17B60088CD18 /* UIColor+Extension.swift in Sources */,
 				2ED7B0A8264EF33B003DE646 /* SearchFactsViewController+UITableViewDataSource.swift in Sources */,
 				2ED7B080264DC47B003DE646 /* Coordinator.swift in Sources */,
+				2ED7B0CC264F0C72003DE646 /* TagsTableViewCell.swift in Sources */,
 				2ED7B07B264DC454003DE646 /* ListFactsCoordinatorProtocol.swift in Sources */,
 				2ED7B094264DC97A003DE646 /* SearchFactsViewController.swift in Sources */,
 				2ED7B052264C59C0003DE646 /* ListFactsViewModelProtocol.swift in Sources */,
 				2EBA33E1264C256B00498EAF /* ChuckNorrisDataManager.swift in Sources */,
 				2ED7B08A264DC7EF003DE646 /* SearchFactsCoordinator.swift in Sources */,
 				2EBA33EB264C4A1200498EAF /* RequestError.swift in Sources */,
+				2ED7B0F2264F0FB9003DE646 /* UpcomingDisplayProtocol.swift in Sources */,
 				2E9147172649A72A0088CD18 /* AppDelegate.swift in Sources */,
 				2E9148A6264B13760088CD18 /* ListFactsViewController+UITableViewDelegate.swift in Sources */,
 				2E9148D2264B18BD0088CD18 /* FontType.swift in Sources */,
+				2ED7B0E6264F0DF6003DE646 /* ArrayString.swift in Sources */,
 				2ED7B0A3264EBA0C003DE646 /* SearchFactsViewControllerProtocol.swift in Sources */,
 				2ED7B0B9264EF848003DE646 /* CacheDataManager.swift in Sources */,
 				2E9148B6264B13E30088CD18 /* FactModel.swift in Sources */,

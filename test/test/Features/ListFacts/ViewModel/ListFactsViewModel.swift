@@ -14,16 +14,19 @@ public class ListFactsViewModel {
     var cacheProvider: CacheProvider?
     
     private var facts: [Fact] {
-        get {
-            return self.cacheProvider?.getFacts() ?? []
+        didSet {
+            if oldValue != facts && facts.count != 0 {
+                self.cacheProvider?.setFacts(facts: facts)
+                self.listFactsView?.reloadData()
+            }
         }
-        set {
-            
-        }
-     }
+    }
+     
     
     init(cache: CacheProvider) {
         self.cacheProvider = cache
+        
+        self.facts = self.cacheProvider?.getFacts() ?? []
     }
 
 }
@@ -39,8 +42,7 @@ extension ListFactsViewModel: ListFactsViewModelProtocol {
             switch result {
             case .success(let fact):
                 //stop loading
-                self?.cacheProvider?.setFacts(facts: [fact])
-                self?.listFactsView?.reloadData()
+                self?.facts = [fact]
             case .failure(let error):
                 //stop loading
                 print("\n\n\n\n\n\n\n erro API: ",error,"\n\n\n\n\n\n")
