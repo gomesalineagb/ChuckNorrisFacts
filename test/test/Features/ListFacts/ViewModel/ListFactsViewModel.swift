@@ -10,81 +10,39 @@ import Foundation
 public class ListFactsViewModel {
     var chuckNorrisProvider: ChuckNorrisProvider?
     var listFactsView: ListFactsViewControllerProtocol?
+    var coordinator: ListFactsCoordinatorProtocol?
+    var cacheProvider: CacheProvider?
     
-    private var facts: [Fact] = [] {
-        didSet{
-            if oldValue != facts{
-                let encoder = JSONEncoder()
-                if let encoded = try? encoder.encode(facts){
-                    UserDefaults.standard.set(encoded, forKey: Constants.kFactsUD)
-                }
-                self.listFactsView?.reloadData()
-            }
+    private var facts: [Fact] {
+        get {
+            return self.cacheProvider?.getFacts() ?? []
+        }
+        set {
+            
         }
      }
     
-    init() {
-        getFactsFromCache()
+    init(cache: CacheProvider) {
+        self.cacheProvider = cache
     }
 
-    func getFactsFromCache() {
-        if let objects = UserDefaults.standard.value(forKey: Constants.kFactsUD) as? Data {
-            let decoder = JSONDecoder()
-            if let objectsDecoded = try? decoder.decode(Array.self, from: objects) as [Fact] {
-                facts = objectsDecoded
-            }
-        }
-    }
 }
 
 extension ListFactsViewModel: ListFactsViewModelProtocol {
-    func search(with term: String) {
-        
-        self.chuckNorrisProvider?.search(with: term) { [weak self] (result) in
-            switch result {
-            case .success(let ListFacts):
-                self?.facts = ListFacts.result
-            case .failure(let error):
-                print("\n\n\n\n\n\n\n erro API: ",error,"\n\n\n\n\n\n")
-            }
-        }
-        
-    }
-    
-    func fetchByCategory(category: String) {
-        
-        self.chuckNorrisProvider?.fetchByCategory(category: category) { [weak self] (result) in
-            switch result {
-            case .success(let fact):
-                self?.facts = [fact]
-            case .failure(let error):
-                print("\n\n\n\n\n\n\n erro API: ",error,"\n\n\n\n\n\n")
-            }
-        }
-        
-    }
-    
-    func fetchCategories() { //precisa guardar no cache
-        
-//        self.chuckNorrisProvider?.fetchCategories { [weak self]  (result) in
-//            switch result {
-//            case .success(let categories):
-//                
-//                
-//
-//            case .failure(let error):
-//                print("\n\n\n\n\n\n\n erro API: ",error,"\n\n\n\n\n\n")
-//            }
-//        }
-        
+    func search() {
+        self.coordinator?.gotoSearchScreen()
     }
     
     func fetchRandom() {
+        //start loading
         self.chuckNorrisProvider?.fetchRandom { [weak self] (result) in
             switch result {
             case .success(let fact):
-                self?.facts = [fact]
+                //stop loading
+                self?.cacheProvider?.setFacts(facts: [fact])
+                self?.listFactsView?.reloadData()
             case .failure(let error):
+                //stop loading
                 print("\n\n\n\n\n\n\n erro API: ",error,"\n\n\n\n\n\n")
             }
         }

@@ -14,8 +14,12 @@ enum Constants{
     static let kSearchTerm = "Enter your search term"
     static let kSuggestions = "Suggestions"
     static let kPastSearches = "Past Searches"
-    static let kFactsUD = "facts"
     
+    //User Defaults keys
+    static let kKeyFactsUserDefaults = "facts"
+    static let kKeyCategoriesUSerDefaults = "categories"
+    static let kKeyPastSearchesUserDefaults = "pastSearches"
+    static let kKeyFirstLaunchUserDefaults = "LaunchedBefore"
     
     enum Measures{
         static let fontSizeBig = 200

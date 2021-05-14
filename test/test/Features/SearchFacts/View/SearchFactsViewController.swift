@@ -1,46 +1,39 @@
 //
-//  ListFactsViewController.swift
+//  SearchFactsViewController.swift
 //  test
 //
-//  Created by Aline Gomes on 10/05/21.
+//  Created by Aline Gomes on 13/05/21.
 //
 
 import UIKit
 
-class ListFactsViewController: UIViewController {
+class SearchFactsViewController: UIViewController {
     
     private lazy var tableViewContent: UITableView = {
         let table = UITableView(frame: self.view.frame)
         table.translatesAutoresizingMaskIntoConstraints = false
         table.rowHeight = UITableView.automaticDimension
         table.separatorStyle = .none
+//        table.allowsSelection = false
         table.estimatedRowHeight = 600
         table.backgroundColor = .defaultWhite
         table.register(UINib(nibName: "FactsTableViewCell", bundle: nil), forCellReuseIdentifier: FactsTableViewCell.identifier)
         table.dataSource = self
-        table.delegate = self
+        table.delegate = self 
         
         return table
     }()
     
-    var viewModel: ListFactsViewModelProtocol?
+    var viewModel: SearchFactsViewModelProtocol?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
     }
-    
-    @objc func refreshRandom() {
-        self.viewModel?.fetchRandom()
-    }
-    
-    @objc func search() {
-        self.viewModel?.search()
-    }
+
 }
 
-extension ListFactsViewController: ViewCode {
-    
+extension SearchFactsViewController: ViewCode{
     func setupConstraints() {
         NSLayoutConstraint.activate([
             self.tableViewContent.topAnchor.constraint(equalTo: self.view.topAnchor),
@@ -55,24 +48,14 @@ extension ListFactsViewController: ViewCode {
     }
     
     func setupAdditionalConfiguration() {
-        self.title = Constants.kTitleViewListFacts
+        self.title = Constants.kTitleViewSearchFacts
         self.view.backgroundColor = .defaultWhite
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "magnifyingglass"), style: .done, target: self, action: #selector(search))
-        navigationItem.rightBarButtonItem?.tintColor = .defaultOrange
-        
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrow.clockwise"), style: .done, target: self, action: #selector(refreshRandom))
-        navigationItem.leftBarButtonItem?.tintColor = .defaultOrange
-        
+        self.navigationItem.searchController = UISearchController(searchResultsController: nil)
+        self.navigationItem.searchController?.searchBar.largeContentTitle = "Enter your search term (at least 3 char)"
     }
 }
 
-
-extension ListFactsViewController: ListFactsViewControllerProtocol {
-    func reloadData() {
-        DispatchQueue.main.async {
-            self.tableViewContent.reloadData()
-            //stop indicator
-        }
-    }
+extension SearchFactsViewController: SearchFactsViewControllerProtocol {
+    
 }

@@ -29,8 +29,8 @@ class FactsTableViewCell: UITableViewCell {
     func setupUI() {
         
         self.tagLabel?.layer.cornerRadius = 5
-        self.tagLabel?.textColor = .white
-        self.tagLabel?.layer.backgroundColor = UIColor.lightGray.cgColor
+        self.tagLabel?.textColor = .defaultBrown
+        self.tagLabel?.layer.backgroundColor = UIColor.defaultBlue.cgColor
         self.tagLabel?.font = .dynamicFont(style: .body, type: .courierNewBold, size: 18)
     }
     

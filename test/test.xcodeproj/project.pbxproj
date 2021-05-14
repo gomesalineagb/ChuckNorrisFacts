@@ -40,6 +40,16 @@
 		2ED7B072264DC436003DE646 /* ListFactsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7B071264DC436003DE646 /* ListFactsCoordinator.swift */; };
 		2ED7B07B264DC454003DE646 /* ListFactsCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7B07A264DC454003DE646 /* ListFactsCoordinatorProtocol.swift */; };
 		2ED7B080264DC47B003DE646 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7B07F264DC47B003DE646 /* Coordinator.swift */; };
+		2ED7B08A264DC7EF003DE646 /* SearchFactsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7B089264DC7EF003DE646 /* SearchFactsCoordinator.swift */; };
+		2ED7B08F264DC7FE003DE646 /* SearchFactsCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7B08E264DC7FE003DE646 /* SearchFactsCoordinatorProtocol.swift */; };
+		2ED7B094264DC97A003DE646 /* SearchFactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7B093264DC97A003DE646 /* SearchFactsViewController.swift */; };
+		2ED7B099264EB944003DE646 /* SearchFactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7B098264EB944003DE646 /* SearchFactsViewModel.swift */; };
+		2ED7B09E264EB97E003DE646 /* SearchFactsViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7B09D264EB97E003DE646 /* SearchFactsViewModelProtocol.swift */; };
+		2ED7B0A3264EBA0C003DE646 /* SearchFactsViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7B0A2264EBA0C003DE646 /* SearchFactsViewControllerProtocol.swift */; };
+		2ED7B0A8264EF33B003DE646 /* SearchFactsViewController+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7B0A7264EF33A003DE646 /* SearchFactsViewController+UITableViewDataSource.swift */; };
+		2ED7B0AD264EF378003DE646 /* SearchFactsViewController+UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7B0AC264EF378003DE646 /* SearchFactsViewController+UITableViewDelegate.swift */; };
+		2ED7B0B4264EF83B003DE646 /* CacheProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7B0B3264EF83B003DE646 /* CacheProvider.swift */; };
+		2ED7B0B9264EF848003DE646 /* CacheDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7B0B8264EF848003DE646 /* CacheDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +109,16 @@
 		2ED7B071264DC436003DE646 /* ListFactsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFactsCoordinator.swift; sourceTree = "<group>"; };
 		2ED7B07A264DC454003DE646 /* ListFactsCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFactsCoordinatorProtocol.swift; sourceTree = "<group>"; };
 		2ED7B07F264DC47B003DE646 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		2ED7B089264DC7EF003DE646 /* SearchFactsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFactsCoordinator.swift; sourceTree = "<group>"; };
+		2ED7B08E264DC7FE003DE646 /* SearchFactsCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFactsCoordinatorProtocol.swift; sourceTree = "<group>"; };
+		2ED7B093264DC97A003DE646 /* SearchFactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFactsViewController.swift; sourceTree = "<group>"; };
+		2ED7B098264EB944003DE646 /* SearchFactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFactsViewModel.swift; sourceTree = "<group>"; };
+		2ED7B09D264EB97E003DE646 /* SearchFactsViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFactsViewModelProtocol.swift; sourceTree = "<group>"; };
+		2ED7B0A2264EBA0C003DE646 /* SearchFactsViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFactsViewControllerProtocol.swift; sourceTree = "<group>"; };
+		2ED7B0A7264EF33A003DE646 /* SearchFactsViewController+UITableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchFactsViewController+UITableViewDataSource.swift"; sourceTree = "<group>"; };
+		2ED7B0AC264EF378003DE646 /* SearchFactsViewController+UITableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchFactsViewController+UITableViewDelegate.swift"; sourceTree = "<group>"; };
+		2ED7B0B3264EF83B003DE646 /* CacheProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheProvider.swift; sourceTree = "<group>"; };
+		2ED7B0B8264EF848003DE646 /* CacheDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				2E91488D264B12220088CD18 /* ListFacts */,
+				2ED7B084264DC705003DE646 /* SearchFacts */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -242,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				2E9148B5264B13E30088CD18 /* FactModel.swift */,
+				2ED7B059264C7781003DE646 /* Fact.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -287,12 +309,8 @@
 		2E9148EC264B68740088CD18 /* DataAccessLayer */ = {
 			isa = PBXGroup;
 			children = (
-				2EBA33D6264C0E8D00498EAF /* ChuckNorrisProvider.swift */,
-				2EBA33E0264C256B00498EAF /* ChuckNorrisDataManager.swift */,
-				2ED7B059264C7781003DE646 /* Fact.swift */,
-				2EBA33DB264C18BD00498EAF /* Endpoints.swift */,
-				2EBA33E5264C28E500498EAF /* HTTPRequest.swift */,
-				2EBA33EA264C4A1200498EAF /* RequestError.swift */,
+				2ED7B0B2264EF819003DE646 /* Cache */,
+				2ED7B0B1264EF7D8003DE646 /* Network */,
 			);
 			path = DataAccessLayer;
 			sourceTree = "<group>";
@@ -313,6 +331,74 @@
 				2ED7B07A264DC454003DE646 /* ListFactsCoordinatorProtocol.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		2ED7B084264DC705003DE646 /* SearchFacts */ = {
+			isa = PBXGroup;
+			children = (
+				2ED7B088264DC7DA003DE646 /* View */,
+				2ED7B087264DC7D0003DE646 /* ViewModel */,
+				2ED7B086264DC7CB003DE646 /* Model */,
+				2ED7B085264DC7AF003DE646 /* Coordinator */,
+			);
+			path = SearchFacts;
+			sourceTree = "<group>";
+		};
+		2ED7B085264DC7AF003DE646 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				2ED7B089264DC7EF003DE646 /* SearchFactsCoordinator.swift */,
+				2ED7B08E264DC7FE003DE646 /* SearchFactsCoordinatorProtocol.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		2ED7B086264DC7CB003DE646 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2ED7B087264DC7D0003DE646 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2ED7B098264EB944003DE646 /* SearchFactsViewModel.swift */,
+				2ED7B09D264EB97E003DE646 /* SearchFactsViewModelProtocol.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2ED7B088264DC7DA003DE646 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2ED7B093264DC97A003DE646 /* SearchFactsViewController.swift */,
+				2ED7B0A2264EBA0C003DE646 /* SearchFactsViewControllerProtocol.swift */,
+				2ED7B0A7264EF33A003DE646 /* SearchFactsViewController+UITableViewDataSource.swift */,
+				2ED7B0AC264EF378003DE646 /* SearchFactsViewController+UITableViewDelegate.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2ED7B0B1264EF7D8003DE646 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				2EBA33D6264C0E8D00498EAF /* ChuckNorrisProvider.swift */,
+				2EBA33E0264C256B00498EAF /* ChuckNorrisDataManager.swift */,
+				2EBA33DB264C18BD00498EAF /* Endpoints.swift */,
+				2EBA33E5264C28E500498EAF /* HTTPRequest.swift */,
+				2EBA33EA264C4A1200498EAF /* RequestError.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		2ED7B0B2264EF819003DE646 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				2ED7B0B3264EF83B003DE646 /* CacheProvider.swift */,
+				2ED7B0B8264EF848003DE646 /* CacheDataManager.swift */,
+			);
+			path = Cache;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -449,29 +535,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2ED7B099264EB944003DE646 /* SearchFactsViewModel.swift in Sources */,
 				2ED7B072264DC436003DE646 /* ListFactsCoordinator.swift in Sources */,
 				2EBA33D7264C0E8D00498EAF /* ChuckNorrisProvider.swift in Sources */,
+				2ED7B09E264EB97E003DE646 /* SearchFactsViewModelProtocol.swift in Sources */,
 				2E91471B2649A72A0088CD18 /* ListFactsViewController.swift in Sources */,
 				2ED7B05A264C7781003DE646 /* Fact.swift in Sources */,
 				2E9148A1264B13650088CD18 /* ListFactsViewController+UITableViewDataSource.swift in Sources */,
 				2EBA33DC264C18BD00498EAF /* Endpoints.swift in Sources */,
 				2E9148AD264B13C00088CD18 /* FactsTableViewCell.swift in Sources */,
 				2E9148CC264B17B60088CD18 /* UIColor+Extension.swift in Sources */,
+				2ED7B0A8264EF33B003DE646 /* SearchFactsViewController+UITableViewDataSource.swift in Sources */,
 				2ED7B080264DC47B003DE646 /* Coordinator.swift in Sources */,
 				2ED7B07B264DC454003DE646 /* ListFactsCoordinatorProtocol.swift in Sources */,
+				2ED7B094264DC97A003DE646 /* SearchFactsViewController.swift in Sources */,
 				2ED7B052264C59C0003DE646 /* ListFactsViewModelProtocol.swift in Sources */,
 				2EBA33E1264C256B00498EAF /* ChuckNorrisDataManager.swift in Sources */,
+				2ED7B08A264DC7EF003DE646 /* SearchFactsCoordinator.swift in Sources */,
 				2EBA33EB264C4A1200498EAF /* RequestError.swift in Sources */,
 				2E9147172649A72A0088CD18 /* AppDelegate.swift in Sources */,
 				2E9148A6264B13760088CD18 /* ListFactsViewController+UITableViewDelegate.swift in Sources */,
 				2E9148D2264B18BD0088CD18 /* FontType.swift in Sources */,
+				2ED7B0A3264EBA0C003DE646 /* SearchFactsViewControllerProtocol.swift in Sources */,
+				2ED7B0B9264EF848003DE646 /* CacheDataManager.swift in Sources */,
 				2E9148B6264B13E30088CD18 /* FactModel.swift in Sources */,
 				2E9147192649A72A0088CD18 /* SceneDelegate.swift in Sources */,
 				2ED7B04D264C59A8003DE646 /* ListFactsViewControllerProtocol.swift in Sources */,
+				2ED7B08F264DC7FE003DE646 /* SearchFactsCoordinatorProtocol.swift in Sources */,
 				2EBA33F1264C569C00498EAF /* ListFactsViewModel.swift in Sources */,
+				2ED7B0AD264EF378003DE646 /* SearchFactsViewController+UITableViewDelegate.swift in Sources */,
 				2E914893264B12ED0088CD18 /* ViewCodeProtocol.swift in Sources */,
 				2EBA33E6264C28E500498EAF /* HTTPRequest.swift in Sources */,
 				2E9148C7264B179E0088CD18 /* UIFont+Extension.swift in Sources */,
+				2ED7B0B4264EF83B003DE646 /* CacheProvider.swift in Sources */,
 				2E9148BE264B15270088CD18 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

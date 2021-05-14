@@ -8,9 +8,7 @@
 import Foundation
 
 protocol ListFactsViewModelProtocol {
-    func search(with term: String)
-    func fetchByCategory(category: String)
-    func fetchCategories()
+    func search()
     func fetchRandom()
     func getFact(for indexPath: IndexPath) -> FactModel
     func numberOfRowsInSection() -> Int
