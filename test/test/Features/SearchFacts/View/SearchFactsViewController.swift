@@ -9,10 +9,9 @@ import UIKit
 
 class SearchFactsViewController: UIViewController {
     
-    private lazy var tableViewContent: UITableView = {
+    internal lazy var tableViewContent: UITableView = {
         let table = UITableView(frame: self.view.frame)
         table.translatesAutoresizingMaskIntoConstraints = false
-        table.rowHeight = UITableView.automaticDimension
 //        table.separatorStyle = .none
 //        table.allowsSelection = false
         table.estimatedRowHeight = 600
@@ -79,5 +78,11 @@ extension SearchFactsViewController: UISearchBarDelegate {
 }
 
 extension SearchFactsViewController: SearchFactsViewControllerProtocol {
+    func search(category: String) {
+        self.viewModel?.fetchByCategory(category: category)
+    }
     
+    func search(term: String) {
+        self.viewModel?.search(with: term)
+    }
 }

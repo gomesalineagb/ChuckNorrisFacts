@@ -9,10 +9,14 @@ import Foundation
 
 public class CacheDataManager: CacheProvider {
     
-    let userDefault = UserDefaults.standard
+    let userDefault: UserDefaults
+    
+    init(userDefault: UserDefaults = UserDefaults.standard) {
+        self.userDefault = userDefault
+    }
     
     public func getPastSearches() -> [String] {
-        if let objects = UserDefaults.standard.stringArray(forKey: Constants.kKeyPastSearchesUserDefaults) {
+        if let objects = userDefault.stringArray(forKey: Constants.kKeyPastSearchesUserDefaults) {
             return objects
         }
         return []
@@ -46,10 +50,15 @@ public class CacheDataManager: CacheProvider {
     }
     
     public func addNewSearch(newSearch: String) {
-        if let searches = userDefault.stringArray(forKey: Constants.kKeyPastSearchesUserDefaults) {
+        if var searches = userDefault.stringArray(forKey: Constants.kKeyPastSearchesUserDefaults) {
             
             if !searches.contains(newSearch){
-                userDefault.set([newSearch], forKey: Constants.kKeyPastSearchesUserDefaults)
+                searches.insert(newSearch, at: 0)
+                userDefault.set(searches, forKey: Constants.kKeyPastSearchesUserDefaults)
+            } else {
+                searches.removeAll(where: { $0 == newSearch })
+                searches.insert(newSearch, at: 0)
+                userDefault.set(searches, forKey: Constants.kKeyPastSearchesUserDefaults)
             }
         } else {
             userDefault.set([newSearch], forKey: Constants.kKeyPastSearchesUserDefaults)

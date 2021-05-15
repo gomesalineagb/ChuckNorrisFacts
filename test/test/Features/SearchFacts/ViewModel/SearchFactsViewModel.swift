@@ -10,23 +10,19 @@ import UIKit
 
 public class SearchFactsViewModel {
     var chuckNorrisProvider: ChuckNorrisProvider?
-    var searchFactsView: SearchFactsViewControllerProtocol?
     var coordinator: SearchFactsCoordinatorProtocol?
     var cacheProvider: CacheProvider?
     private var categories: [String] = []
     private var pastSearches: [String] = []
     
-    private var dataProperty: [UpcomingDisplayProtocol] {
-        get {
-            return [ArrayString(type: .tags, values: categories), ArrayString(type: .suggestions, values: pastSearches)]
-        }
-    }
-    
+    private var dataProperty: [UpcomingDisplayProtocol] = []
     init(cache: CacheProvider) {
         self.cacheProvider = cache
         
         self.categories = self.getCategoriesRandom(count: 8)
         self.pastSearches = self.cacheProvider?.getPastSearches() ?? []
+        self.dataProperty = [ArrayString(type: .tags, values: categories),
+                             ArrayString(type: .suggestions, values: pastSearches)]
     }
     
     func getCategoriesRandom(count: Int) -> [String] {

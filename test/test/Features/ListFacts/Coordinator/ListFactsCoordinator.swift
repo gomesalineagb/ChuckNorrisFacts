@@ -22,15 +22,15 @@ public class ListFactsCoordinator: Coordinator{
         DispatchQueue.main.async {
             
             let listFactsView = ListFactsViewController()
-        let cacheProvider = CacheDataManager()
-        let viewModel = ListFactsViewModel(cache: cacheProvider)
-        
-        listFactsView.viewModel = viewModel
-        viewModel.listFactsView = listFactsView
-        viewModel.chuckNorrisProvider = chuckNorrisProvider
-        viewModel.coordinator = self
+            let cacheProvider = CacheDataManager()
+            let viewModel = ListFactsViewModel(cache: cacheProvider)
+            
+            listFactsView.viewModel = viewModel
+            viewModel.listFactsView = listFactsView
+            viewModel.chuckNorrisProvider = chuckNorrisProvider
+            viewModel.coordinator = self
             self.navigationController.pushViewController(listFactsView, animated: true)
-    }
+        }
     }
 }
 

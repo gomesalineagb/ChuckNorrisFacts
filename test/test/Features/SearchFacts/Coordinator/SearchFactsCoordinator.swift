@@ -25,7 +25,6 @@ class SearchFactsCoordinator: Coordinator {
         let viewModel = SearchFactsViewModel(cache: cacheProvider)
         
         searchFactsView.viewModel = viewModel
-        viewModel.searchFactsView = searchFactsView
         viewModel.chuckNorrisProvider = chuckNorrisProvider
         viewModel.coordinator = self
                 

@@ -7,6 +7,7 @@
 
 import Foundation
 
-protocol SearchFactsViewControllerProtocol {
-    
+protocol SearchFactsViewControllerProtocol: AnyObject {
+    func search(category: String)
+    func search(term: String)
 }

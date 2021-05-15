@@ -58,6 +58,10 @@ extension ListFactsViewController: ViewCode {
         self.title = Constants.kTitleViewListFacts
         self.view.backgroundColor = .defaultWhite
         
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "04b30", size: 25)!, NSAttributedString.Key.foregroundColor: UIColor.defaultOrange]
+        navigationController?.navigationBar.titleTextAttributes = [ NSAttributedString.Key.foregroundColor: UIColor.defaultBrown]
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "magnifyingglass"), style: .done, target: self, action: #selector(search))
         navigationItem.rightBarButtonItem?.tintColor = .defaultOrange
         
