@@ -7,7 +7,13 @@
 
 import UIKit
 
-class ListFactsViewController: UIViewController {
+class ListFactsViewController: UIViewController, ActivityIndicatorProtocol {
+    
+    var activityIndicator: UIActivityIndicatorView = {
+        let act =  UIActivityIndicatorView(style: .large)
+        act.color = .defaultBlue
+        return act
+    }()
     
     private lazy var tableViewContent: UITableView = {
         let table = UITableView(frame: self.view.frame)
@@ -28,9 +34,11 @@ class ListFactsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        setupActivityIndicator()
     }
     
     @objc func refreshRandom() {
+        startActivityIndicator()
         self.viewModel?.fetchRandom()
     }
     
@@ -76,7 +84,7 @@ extension ListFactsViewController: ListFactsViewControllerProtocol {
     func reloadData() {
         DispatchQueue.main.async {
             self.tableViewContent.reloadData()
-            //stop indicator
         }
+        stopActivityIndicator()
     }
 }

@@ -36,6 +36,7 @@
 		2EBA33F1264C569C00498EAF /* ListFactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA33F0264C569C00498EAF /* ListFactsViewModel.swift */; };
 		2ECD67FA26502DE50093B8FF /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECD67F826502DE50093B8FF /* TagCollectionViewCell.swift */; };
 		2ECD67FB26502DE50093B8FF /* TagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2ECD67F926502DE50093B8FF /* TagCollectionViewCell.xib */; };
+		2ECD68002652E1F60093B8FF /* ActivityIndicatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECD67FF2652E1F60093B8FF /* ActivityIndicatorProtocol.swift */; };
 		2ED7B04D264C59A8003DE646 /* ListFactsViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7B04C264C59A8003DE646 /* ListFactsViewControllerProtocol.swift */; };
 		2ED7B052264C59C0003DE646 /* ListFactsViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7B051264C59C0003DE646 /* ListFactsViewModelProtocol.swift */; };
 		2ED7B05A264C7781003DE646 /* Fact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7B059264C7781003DE646 /* Fact.swift */; };
@@ -113,6 +114,7 @@
 		2EBA33F0264C569C00498EAF /* ListFactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFactsViewModel.swift; sourceTree = "<group>"; };
 		2ECD67F826502DE50093B8FF /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
 		2ECD67F926502DE50093B8FF /* TagCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCollectionViewCell.xib; sourceTree = "<group>"; };
+		2ECD67FF2652E1F60093B8FF /* ActivityIndicatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorProtocol.swift; sourceTree = "<group>"; };
 		2ED7B04C264C59A8003DE646 /* ListFactsViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFactsViewControllerProtocol.swift; sourceTree = "<group>"; };
 		2ED7B051264C59C0003DE646 /* ListFactsViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFactsViewModelProtocol.swift; sourceTree = "<group>"; };
 		2ED7B059264C7781003DE646 /* Fact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fact.swift; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 			children = (
 				2E914892264B12ED0088CD18 /* ViewCodeProtocol.swift */,
 				2ED7B07F264DC47B003DE646 /* Coordinator.swift */,
+				2ECD67FF2652E1F60093B8FF /* ActivityIndicatorProtocol.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -592,6 +595,7 @@
 				2ED7B0A8264EF33B003DE646 /* SearchFactsViewController+UITableViewDataSource.swift in Sources */,
 				2ED7B080264DC47B003DE646 /* Coordinator.swift in Sources */,
 				2ED7B0CC264F0C72003DE646 /* TagsTableViewCell.swift in Sources */,
+				2ECD68002652E1F60093B8FF /* ActivityIndicatorProtocol.swift in Sources */,
 				2ED7B07B264DC454003DE646 /* ListFactsCoordinatorProtocol.swift in Sources */,
 				2ED7B094264DC97A003DE646 /* SearchFactsViewController.swift in Sources */,
 				2ED7B052264C59C0003DE646 /* ListFactsViewModelProtocol.swift in Sources */,

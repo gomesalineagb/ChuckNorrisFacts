@@ -7,7 +7,13 @@
 
 import UIKit
 
-class SearchFactsViewController: UIViewController {
+class SearchFactsViewController: UIViewController, ActivityIndicatorProtocol {
+    
+    var activityIndicator: UIActivityIndicatorView = {
+        let act =  UIActivityIndicatorView(style: .large)
+        act.color = .defaultBlue
+        return act
+    }()
     
     internal lazy var tableViewContent: UITableView = {
         let table = UITableView(frame: self.view.frame)
@@ -29,6 +35,7 @@ class SearchFactsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        setupActivityIndicator()
     }
 
 }
@@ -58,31 +65,37 @@ extension SearchFactsViewController: ViewCode{
         search.searchBar.placeholder = "Enter your search term"
         
         self.navigationItem.searchController = search
-        self.navigationItem.searchController?.searchBar.largeContentTitle = "Enter your search term (at least 3 char)"
     }
 }
 
 extension SearchFactsViewController: UISearchBarDelegate {
-//    func updateSearchResults(for searchController: UISearchController) {
-//        guard let text = searchController.searchBar.text else { return }
-//        //at least 3 character
-//    }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
-        if let text = searchBar.text {
-            self.viewModel?.search(with: text)
+        guard let text = searchBar.text, text.count >= 3 && text.count <= 120 else {
+            
+            let alert = UIAlertController(title: title, message: "Enter at least 3 character", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { a in
+                
+                searchBar.resignFirstResponder()
+            }))
+            self.present(alert, animated: true, completion: nil)
+            return
         }
-        
+            
+        startActivityIndicator()
+        self.viewModel?.search(with: text)
     }
 }
 
 extension SearchFactsViewController: SearchFactsViewControllerProtocol {
     func search(category: String) {
+        startActivityIndicator()
         self.viewModel?.fetchByCategory(category: category)
     }
     
     func search(term: String) {
+        startActivityIndicator()
         self.viewModel?.search(with: term)
     }
 }
