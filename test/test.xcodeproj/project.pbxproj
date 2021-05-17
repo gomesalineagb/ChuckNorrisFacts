@@ -34,6 +34,8 @@
 		2EBA33E6264C28E500498EAF /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA33E5264C28E500498EAF /* HTTPRequest.swift */; };
 		2EBA33EB264C4A1200498EAF /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA33EA264C4A1200498EAF /* RequestError.swift */; };
 		2EBA33F1264C569C00498EAF /* ListFactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA33F0264C569C00498EAF /* ListFactsViewModel.swift */; };
+		2ECD67FA26502DE50093B8FF /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECD67F826502DE50093B8FF /* TagCollectionViewCell.swift */; };
+		2ECD67FB26502DE50093B8FF /* TagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2ECD67F926502DE50093B8FF /* TagCollectionViewCell.xib */; };
 		2ED7B04D264C59A8003DE646 /* ListFactsViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7B04C264C59A8003DE646 /* ListFactsViewControllerProtocol.swift */; };
 		2ED7B052264C59C0003DE646 /* ListFactsViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7B051264C59C0003DE646 /* ListFactsViewModelProtocol.swift */; };
 		2ED7B05A264C7781003DE646 /* Fact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7B059264C7781003DE646 /* Fact.swift */; };
@@ -109,6 +111,8 @@
 		2EBA33E5264C28E500498EAF /* HTTPRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
 		2EBA33EA264C4A1200498EAF /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 		2EBA33F0264C569C00498EAF /* ListFactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFactsViewModel.swift; sourceTree = "<group>"; };
+		2ECD67F826502DE50093B8FF /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
+		2ECD67F926502DE50093B8FF /* TagCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCollectionViewCell.xib; sourceTree = "<group>"; };
 		2ED7B04C264C59A8003DE646 /* ListFactsViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFactsViewControllerProtocol.swift; sourceTree = "<group>"; };
 		2ED7B051264C59C0003DE646 /* ListFactsViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFactsViewModelProtocol.swift; sourceTree = "<group>"; };
 		2ED7B059264C7781003DE646 /* Fact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fact.swift; sourceTree = "<group>"; };
@@ -411,6 +415,8 @@
 			children = (
 				2ED7B0CA264F0C72003DE646 /* TagsTableViewCell.swift */,
 				2ED7B0CB264F0C72003DE646 /* TagsTableViewCell.xib */,
+				2ECD67F826502DE50093B8FF /* TagCollectionViewCell.swift */,
+				2ECD67F926502DE50093B8FF /* TagCollectionViewCell.xib */,
 			);
 			path = Tags;
 			sourceTree = "<group>";
@@ -545,6 +551,7 @@
 				2E9147202649A72C0088CD18 /* Assets.xcassets in Resources */,
 				2E91471E2649A72A0088CD18 /* Main.storyboard in Resources */,
 				2E9148DB264B342F0088CD18 /* Courier-New-bold.ttf in Resources */,
+				2ECD67FB26502DE50093B8FF /* TagCollectionViewCell.xib in Resources */,
 				2E9148AE264B13C00088CD18 /* FactsTableViewCell.xib in Resources */,
 				2E9148D9264B342F0088CD18 /* Courier-New.ttf in Resources */,
 			);
@@ -601,6 +608,7 @@
 				2E9148B6264B13E30088CD18 /* FactModel.swift in Sources */,
 				2E9147192649A72A0088CD18 /* SceneDelegate.swift in Sources */,
 				2ED7B04D264C59A8003DE646 /* ListFactsViewControllerProtocol.swift in Sources */,
+				2ECD67FA26502DE50093B8FF /* TagCollectionViewCell.swift in Sources */,
 				2ED7B08F264DC7FE003DE646 /* SearchFactsCoordinatorProtocol.swift in Sources */,
 				2EBA33F1264C569C00498EAF /* ListFactsViewModel.swift in Sources */,
 				2ED7B0AD264EF378003DE646 /* SearchFactsViewController+UITableViewDelegate.swift in Sources */,

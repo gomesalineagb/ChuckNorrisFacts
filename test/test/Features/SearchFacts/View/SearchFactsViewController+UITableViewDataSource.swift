@@ -22,7 +22,7 @@ extension SearchFactsViewController: UITableViewDataSource {
         case .suggestions:
             return CGFloat(44 * (data?.values.count ?? 0) + 50)
         default:
-            return UITableView.automaticDimension
+            return 220
         }
     }
     

@@ -36,7 +36,6 @@ class PastSearchesTableViewCell: UITableViewCell {
     
     func setup(suggestions: ArrayString) {
         self.content = suggestions
-        self.contentTableView?.reloadData()
     }
 }
 
