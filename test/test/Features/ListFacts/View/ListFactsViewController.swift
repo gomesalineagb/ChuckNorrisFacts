@@ -88,3 +88,12 @@ extension ListFactsViewController: ListFactsViewControllerProtocol {
         stopActivityIndicator()
     }
 }
+
+
+extension ListFactsViewController: ShareFactWithFriendsProtocol {
+    func share(fact: FactModel) {
+        let activityViewController = UIActivityViewController(activityItems: [fact.url], applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view
+        self.present(activityViewController, animated: true, completion: nil)
+    }
+}

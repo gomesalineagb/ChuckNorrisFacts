@@ -9,11 +9,21 @@ import UIKit
 
 class FactsTableViewCell: UITableViewCell {
     static let identifier = "listFactsCell"
+    
+    weak var delegate: ShareFactWithFriendsProtocol?
 
     @IBOutlet private weak var factLabel: UILabel?
     @IBOutlet private weak var tagLabel: UILabel?
     @IBOutlet private weak var shareButton: UIButton?
 
+    private var content: FactModel? {
+        didSet {
+            guard let cont = self.content else { return }
+            self.factLabel?.text = cont.fact
+            self.tagLabel?.text = cont.tag
+            self.factLabel?.font = .dynamicFont(type: .courierNew, size: cont.fontSize)
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,12 +45,12 @@ class FactsTableViewCell: UITableViewCell {
     }
     
     func setup(model: FactModel) {
-        self.factLabel?.text = model.fact
-        self.tagLabel?.text = model.tag
-        self.factLabel?.font = .dynamicFont(type: .courierNew, size: model.fontSize)
+        self.content = model
     }
     
     @IBAction func shareWithFriends(_ sender: Any) {
+        guard let cont = self.content else { return }
+        self.delegate?.share(fact: cont) 
     }
     
 }

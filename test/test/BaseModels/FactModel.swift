@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-struct FactModel {
+public struct FactModel {
     var fact: String
     var tag: String
     var fontSize: CGFloat {

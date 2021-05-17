@@ -18,7 +18,7 @@ extension ListFactsViewController: UITableViewDataSource{
         if let cell = tableView.dequeueReusableCell(withIdentifier: FactsTableViewCell.identifier, for: indexPath) as? FactsTableViewCell {
             guard let viewModel = viewModel else { return UITableViewCell() }
             cell.setup(model: viewModel.getFact(for: indexPath))
-            
+            cell.delegate = self
             return cell
         }
         
